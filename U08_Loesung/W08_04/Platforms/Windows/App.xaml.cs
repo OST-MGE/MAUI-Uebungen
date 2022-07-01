@@ -11,13 +11,13 @@ public partial class App : MauiWinUIApplication
     private const int WindowWidth = 600;
     private const int WindowHeight = 300;
 
-	/// <summary>
-	/// Initializes the singleton application object.  This is the first line of authored code
-	/// executed, and as such is the logical equivalent of main() or WinMain().
-	/// </summary>
-	public App()
-	{
-		this.InitializeComponent();
+    /// <summary>
+    /// Initializes the singleton application object.  This is the first line of authored code
+    /// executed, and as such is the logical equivalent of main() or WinMain().
+    /// </summary>
+    public App()
+    {
+        this.InitializeComponent();
 
         Microsoft.Maui.Handlers.WindowHandler.Mapper.AppendToMapping(nameof(IWindow), (handler, view) =>
         {
@@ -32,6 +32,6 @@ public partial class App : MauiWinUIApplication
         });
     }
 
-	protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
+    protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
 }
 
