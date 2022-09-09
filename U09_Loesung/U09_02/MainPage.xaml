@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="U09_02.MainPage"
+             Title="Color Sliders">
+
+    <Grid Margin="20" RowSpacing="10" ColumnSpacing="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" 
+               Grid.Column="0" 
+               VerticalOptions="Center"
+               Text="R:"
+               FontFamily="OpenSansSemibold" />
+
+        <Slider Grid.Row="0" 
+                Grid.Column="1" 
+                x:Name="SliderR"
+                VerticalOptions="Center"
+                Minimum="0"
+                Maximum="255"
+                Value="130"
+                ValueChanged="ColorSlider_ValueChanged"/>
+
+        <Entry Grid.Row="0"
+               Grid.Column="2"
+               x:Name="EntryR"
+               VerticalOptions="Center"
+               Text="130"
+               HorizontalTextAlignment="End"
+               TextChanged="EntryR_OnTextChanged" />
+
+        <Label Grid.Row="1" 
+               Grid.Column="0" 
+               VerticalOptions="Center"
+               Text="G:"
+               FontFamily="OpenSansSemibold" />
+
+        <Slider Grid.Row="1" 
+                Grid.Column="1" 
+                x:Name="SliderG"
+                VerticalOptions="Center"
+                Minimum="0"
+                Maximum="255"
+                Value="80"
+                ValueChanged="ColorSlider_ValueChanged"/>
+
+        <Entry Grid.Row="1"
+               Grid.Column="2"
+               x:Name="EntryG"
+               VerticalOptions="Center"
+               Text="80"
+               HorizontalTextAlignment="End"
+               TextChanged="EntryG_OnTextChanged" />
+
+        <Label Grid.Row="2" 
+               Grid.Column="0" 
+               VerticalOptions="Center"
+               Text="B:"
+               FontFamily="OpenSansSemibold" />
+
+        <Slider Grid.Row="2" 
+                Grid.Column="1" 
+                x:Name="SliderB"
+                VerticalOptions="Center"
+                Minimum="0"
+                Maximum="255"
+                Value="145"
+                ValueChanged="ColorSlider_ValueChanged"/>
+
+        <Entry Grid.Row="2"
+               Grid.Column="2"
+               x:Name="EntryB"
+               VerticalOptions="Center"
+               Text="145"
+               HorizontalTextAlignment="End"
+               TextChanged="EntryB_OnTextChanged" />
+
+        <Frame Grid.Row="3"
+               Grid.Column="0"
+               Grid.ColumnSpan="3"
+               x:Name="ColorArea"
+               BackgroundColor="#825091"
+               CornerRadius="10" >
+
+            <Label x:Name="ColorLabel"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   Text="#825091"
+                   FontSize="20"
+                   FontFamily="OpenSansSemibold" />
+        </Frame>
+    </Grid>
+
+</ContentPage>
