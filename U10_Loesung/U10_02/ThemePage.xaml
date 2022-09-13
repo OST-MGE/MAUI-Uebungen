@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="U10_02.ThemePage"
+             Title="Theme wählen">
+
+    <Grid RowDefinitions="*,Auto">
+        <Grid Grid.Row="0"
+              RowDefinitions="*,*,*,*"
+              RowSpacing="0"
+              Style="{StaticResource ContentGrid}">
+
+            <Label Grid.Row="0"
+                   Style="{StaticResource TitleLabel}"
+                   Text="Theme wählen" />
+
+            <RadioButton Grid.Row="1">
+                <RadioButton.Content>
+                    <Label Style="{StaticResource ContentLabel}"
+                           VerticalOptions="Center"
+                           Text="Blau" />
+                </RadioButton.Content>
+            </RadioButton>
+
+            <RadioButton Grid.Row="2">
+                <RadioButton.Content>
+                    <Label Style="{StaticResource ContentLabel}"
+                           VerticalOptions="Center"
+                           Text="Grün" />
+                </RadioButton.Content>
+            </RadioButton>
+
+            <RadioButton Grid.Row="3">
+                <RadioButton.Content>
+                    <Label Style="{StaticResource ContentLabel}"
+                           VerticalOptions="Center"
+                           Text="Rot" />
+                </RadioButton.Content>
+            </RadioButton>
+        </Grid>
+
+        <Grid Grid.Row="1"
+              ColumnDefinitions="*,Auto,Auto"
+              Style="{StaticResource ContentGrid}"
+              Background="{StaticResource ButtonBarColor}">
+
+            <Button Grid.Column="1"
+                    Style="{StaticResource SuccessButton}"
+                    Text="Anwenden" />
+
+            <Button Grid.Column="2"
+                    Text="Abbrechen" />
+        </Grid>
+    </Grid>
+
+</ContentPage>

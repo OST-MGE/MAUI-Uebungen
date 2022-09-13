@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="U10_01.AlertPage"
+             Title="Änderungen speichern">
+
+    <Grid RowDefinitions="*,Auto">
+        <Grid RowDefinitions="*,*"
+              RowSpacing="10"
+              ColumnDefinitions="Auto, *"
+              ColumnSpacing="10"
+              Padding="20,10">
+
+            <Polygon Grid.Row="0"
+                     Grid.RowSpan="2"
+                     Points="8,52 56,52 32,8" 
+                     Fill="Red"
+                     VerticalOptions="Center"
+                     HorizontalOptions="Center"/>
+
+            <Label Grid.Row="0"
+                   Grid.RowSpan="2"
+                   Grid.Column="0"
+                   Text="!" 
+                   FontFamily="OpenSansSemibold"
+                   FontSize="26"
+                   VerticalOptions="Center" 
+                   HorizontalOptions="Center"
+                   Margin="0,8,0,0"/>
+
+            <Label Grid.Row="0"
+                   Grid.Column="1"
+                   Text="Warnung"
+                   VerticalOptions="End" />
+
+            <Label Grid.Row="1"
+                   Grid.Column="1"
+                   Text="Sollen die Änderungen gespeichert werden?"
+                   VerticalOptions="Start" />
+        </Grid>
+
+        <Grid Grid.Row="1"
+              ColumnDefinitions="Auto,*,Auto,Auto"
+              ColumnSpacing="10"
+              Padding="20,10">
+    
+            <Button Grid.Column="0"
+                    Text="Themes" />
+
+            <Button Grid.Column="2"
+                    Text="Speichern" />
+
+            <Button Grid.Column="3"
+                    Text="Abbrechen" />
+        </Grid>
+    </Grid>
+
+</ContentPage>
