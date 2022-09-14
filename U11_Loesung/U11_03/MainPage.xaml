@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converter="clr-namespace:U11_03.Converter"
+             x:Class="U11_03.MainPage"
+             Title="Color Sliders Reloaded">
+
+    <ContentPage.Resources>
+        <converter:SliderToEntryConverter x:Key="SliderToEntry" />
+        <converter:RGBToColorConverter x:Key="RGBToColor" />
+        <converter:RGBToStringConverter x:Key="RGBToString" />
+    </ContentPage.Resources>
+
+    <Grid Margin="20" RowSpacing="10" ColumnSpacing="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" 
+               Grid.Column="0" 
+               VerticalOptions="Center"
+               Text="R:"
+               FontFamily="OpenSansSemibold" />
+
+        <Slider Grid.Row="0" 
+                Grid.Column="1" 
+                x:Name="SliderR"
+                VerticalOptions="Center"
+                Minimum="0"
+                Maximum="255"
+                Value="130" />
+
+        <Entry Grid.Row="0"
+               Grid.Column="2"
+               VerticalOptions="Center"
+               Text="{Binding Source={x:Reference Name=SliderR}, Path=Value, Mode=TwoWay, Converter={StaticResource SliderToEntry}, FallbackValue='130'}"
+               HorizontalTextAlignment="End" />
+
+        <Label Grid.Row="1" 
+               Grid.Column="0" 
+               VerticalOptions="Center"
+               Text="G:"
+               FontFamily="OpenSansSemibold" />
+
+        <Slider Grid.Row="1" 
+                Grid.Column="1" 
+                x:Name="SliderG"
+                VerticalOptions="Center"
+                Minimum="0"
+                Maximum="255"
+                Value="80" />
+
+        <Entry Grid.Row="1"
+               Grid.Column="2"
+               VerticalOptions="Center"
+               Text="{Binding Source={x:Reference Name=SliderG}, Path=Value, Mode=TwoWay, Converter={StaticResource SliderToEntry}, FallbackValue='80'}"
+               HorizontalTextAlignment="End" />
+
+        <Label Grid.Row="2" 
+               Grid.Column="0" 
+               VerticalOptions="Center"
+               Text="B:"
+               FontFamily="OpenSansSemibold" />
+
+        <Slider Grid.Row="2" 
+                Grid.Column="1" 
+                x:Name="SliderB"
+                VerticalOptions="Center"
+                Minimum="0"
+                Maximum="255"
+                Value="145" />
+
+        <Entry Grid.Row="2"
+               Grid.Column="2"
+               VerticalOptions="Center"
+               Text="{Binding Source={x:Reference Name=SliderB}, Path=Value, Mode=TwoWay, Converter={StaticResource SliderToEntry}, FallbackValue='145'}"
+               HorizontalTextAlignment="End" />
+
+        <Frame Grid.Row="3"
+               Grid.Column="0"
+               Grid.ColumnSpan="3"
+               CornerRadius="10" >
+
+            <Frame.Background>
+                <SolidColorBrush>
+                    <SolidColorBrush.Color>
+                        <MultiBinding Converter="{StaticResource RGBToColor}">
+                            <Binding Source="{x:Reference Name=SliderR}" Path="Value" />
+                            <Binding Source="{x:Reference Name=SliderG}" Path="Value" />
+                            <Binding Source="{x:Reference Name=SliderB}" Path="Value" />
+                        </MultiBinding>
+                    </SolidColorBrush.Color>
+                </SolidColorBrush>
+            </Frame.Background>
+
+            <Label HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   FontSize="20"
+                   FontFamily="OpenSansSemibold">
+
+                <Label.Text>
+                    <MultiBinding Converter="{StaticResource RGBToString}">
+                        <Binding Source="{x:Reference Name=SliderR}" Path="Value" />
+                        <Binding Source="{x:Reference Name=SliderG}" Path="Value" />
+                        <Binding Source="{x:Reference Name=SliderB}" Path="Value" />
+                    </MultiBinding>
+                </Label.Text>
+            </Label>
+        </Frame>
+    </Grid>
+
+</ContentPage>
