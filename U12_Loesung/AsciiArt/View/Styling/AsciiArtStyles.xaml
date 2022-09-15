@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="U12.View.Styling.AsciiArtStyles">
+
+    <Style TargetType="Label">
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="FontFamily" Value="OpenSansRegular" />
+    </Style>
+
+    <Style TargetType="Button">
+        <Setter Property="FontFamily" Value="OpenSansRegular" />
+    </Style>
+
+    <Style TargetType="Grid" x:Key="OptionsGrid">
+        <Setter Property="ColumnSpacing" Value="10" />
+        <Setter Property="RowSpacing" Value="5" />
+    </Style>
+
+    <Style TargetType="ScrollView" x:Key="OutputScrollView">
+        <Setter Property="Orientation" Value="Both" />
+        <Setter Property="HorizontalScrollBarVisibility" Value="Always" />
+        <Setter Property="VerticalScrollBarVisibility" Value="Always" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="OutputLabel">
+        <Setter Property="FontFamily" Value="RobotoMonoRegular" />
+    </Style>
+
+</ResourceDictionary>
