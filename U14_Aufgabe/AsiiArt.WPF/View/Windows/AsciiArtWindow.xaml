@@ -1,0 +1,54 @@
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:dd="clr-namespace:U14.WPF.View.Designer"
+        xmlns:vc="clr-namespace:U14.WPF.View.ValueConverter"
+        x:Class="U14.WPF.View.Windows.AsciiArtWindow"
+        mc:Ignorable="d"
+        d:DataContext="{x:Static dd:DesignerData.ViewModel}"
+        FontSize="16"
+        Background="#EEE"
+        ResizeMode="CanResizeWithGrip"
+        Title="ASCII Art Generator"
+        Height="600"
+        Width="800"
+        MinHeight="480"
+        MinWidth="640"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Styling/AsciiArtStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <vc:VisibilityValueConverter x:Key="VisibilityValueConverter" />
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <DockPanel Margin="20">
+
+        <Grid DockPanel.Dock="Top">
+            <Label Height="150"
+                   HorizontalContentAlignment="Center"
+                   VerticalContentAlignment="Center"
+                   FontWeight="ExtraBold"
+                   Content="TODO [Aufgabe 03]: Controls und Data Binding ergänzen" />
+        </Grid>
+
+        <Grid>
+            <TextBox Style="{StaticResource AsciiArtStyle}"
+                     FontSize="{Binding FontSize}"
+                     Text="{Binding Result, Mode=OneWay}"
+                     PreviewMouseWheel="OutputText_OnPreviewMouseWheel"/>
+
+            <ProgressBar IsIndeterminate="true"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         Height="10"
+                         Width="200"
+                         Visibility="{Binding IsCalculating, Converter={StaticResource VisibilityValueConverter}}"/>
+        </Grid>
+    </DockPanel>
+</Window>
