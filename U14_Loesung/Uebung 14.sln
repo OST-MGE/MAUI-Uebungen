@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsciiArt.MAUI", "AsciiArt.M
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsciiArt.Tests", "AsciiArt.Tests\AsciiArt.Tests.csproj", "{3A90627C-70DC-4E89-B92B-210A20D3608C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsiiArt.WPF", "AsiiArt.WPF\AsiiArt.WPF.csproj", "{89A0722D-4962-479A-9A30-6938EA7E16A8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsciiArt.WPF", "AsciiArt.WPF\AsciiArt.WPF.csproj", "{89A0722D-4962-479A-9A30-6938EA7E16A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
