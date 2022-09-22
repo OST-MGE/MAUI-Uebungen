@@ -1,0 +1,61 @@
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:s="clr-namespace:System;assembly=System.Runtime"
+             x:Class="U10_03.App">
+
+    <Application.Resources>
+        <s:Double x:Key="Spacing1X">10</s:Double>
+        <s:Double x:Key="Spacing2X">20</s:Double>
+        <s:Double x:Key="FontSize">14</s:Double>
+
+        <Color x:Key="BlueColor">#5070FF</Color>
+        <Color x:Key="GreenColor">#50CC50</Color>
+        <Color x:Key="RedColor">#FF5070</Color>
+
+        <SolidColorBrush x:Key="AlertColor" Color="Red" />
+        <SolidColorBrush x:Key="ButtonBarColor" Color="#262626" />
+        <SolidColorBrush x:Key="NormalButtonColor" Color="#666666" />
+        <SolidColorBrush x:Key="HighlightButtonColor" Color="{StaticResource BlueColor}" />
+
+        <Style x:Key="ContentGrid" TargetType="Grid">
+            <Setter Property="RowSpacing" Value="{StaticResource Spacing1X}" />
+            <Setter Property="ColumnSpacing" Value="{StaticResource Spacing1X}" />
+            <Setter Property="Padding">
+                <Setter.Value>
+                    <Thickness Left="{StaticResource Spacing2X}"
+                               Right="{StaticResource Spacing2X}"
+                               Top="{StaticResource Spacing1X}"
+                               Bottom="{StaticResource Spacing1X}" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="TitleLabel" TargetType="Label">
+            <Setter Property="FontFamily" Value="OpenSansSemibold" />
+            <Setter Property="FontSize" Value="{StaticResource FontSize}" />
+            <Setter Property="HorizontalOptions" Value="Start" />
+        </Style>
+
+        <Style x:Key="ContentLabel" TargetType="Label">
+            <Setter Property="FontFamily" Value="OpenSansRegular" />
+            <Setter Property="FontSize" Value="{StaticResource FontSize}" />
+            <Setter Property="HorizontalOptions" Value="Start" />
+        </Style>
+
+        <Style x:Key="BaseButton" TargetType="Button">
+            <Setter Property="WidthRequest" Value="100" />
+            <Setter Property="FontFamily" Value="OpenSansRegular" />
+            <Setter Property="FontSize" Value="{StaticResource FontSize}" />
+        </Style>
+
+        <Style TargetType="Button" BasedOn="{StaticResource BaseButton}">
+            <Setter Property="Background" Value="{StaticResource NormalButtonColor}" />
+        </Style>
+
+        <Style x:Key="SuccessButton" TargetType="Button" BasedOn="{StaticResource BaseButton}">
+            <Setter Property="Background" Value="{DynamicResource HighlightButtonColor}" />
+        </Style>
+    </Application.Resources>
+    
+</Application>

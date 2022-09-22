@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:U14.Core.ViewModel;assembly=AsciiArt.Core"
+             xmlns:styling="clr-namespace:U14.MAUI.View.Styling"
+             x:Class="U14.MAUI.View.Pages.AsciiArtPage"
+             x:DataType="vm:IAsciiArtViewModel"
+             Title="ASCII Art Generator"
+             Padding="10">
+
+    <ContentPage.Resources>
+        <styling:AsciiArtStyles />
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="Auto,*">
+        <Grid Grid.Row="0"
+              ColumnDefinitions="Auto,*,Auto"
+              RowDefinitions="*,*,*,*"
+              Style="{StaticResource OptionsGrid}">
+
+            <!-- Bild -->
+
+            <Label Grid.Row="0"
+                   Grid.Column="0"
+                   Text="Bild:" />
+
+            <Entry Grid.Row="0"
+                   Grid.Column="1"
+                   Text="{Binding ImagePath}"
+                   IsEnabled="False" />
+
+            <Button Grid.Row="0"
+                    Grid.Column="2"
+                    Text="..."
+                    Command="{Binding ChooseImageCommand}" />
+
+            <!-- Breite -->
+
+            <Label Grid.Row="1"
+                   Grid.Column="0"
+                   Text="Zeichen pro Zeile:" />
+
+            <Slider Grid.Row="1"
+                    Grid.Column="1"
+                    Maximum="{Binding MaximumLineWidth}"
+                    Minimum="{Binding MinimumLineWidth}"
+                    Value="{Binding LineWidth}" />
+
+            <Label Grid.Row="1"
+                   Grid.Column="2"
+                   Text="{Binding LineWidth}" />
+
+            <!-- Schriftgrösse -->
+
+            <Label Grid.Row="2"
+                   Grid.Column="0"
+                   Text="Schriftgrösse:" />
+
+            <Slider Grid.Row="2"
+                    Grid.Column="1"
+                    Maximum="{Binding MaximumFontSize}"
+                    Minimum="{Binding MinimumFontSize}"
+                    Value="{Binding FontSize}" />
+
+            <Label Grid.Row="2"
+                   Grid.Column="2"
+                   Text="{Binding FontSize}" />
+
+            <!-- Berechnen -->
+        
+            <Button Grid.Row="3"
+                    Grid.Column="1"
+                    Text="Generieren"
+                    Command="{Binding CreateAsciiCommand}"/>
+        </Grid>
+
+        <ScrollView Grid.Row="1"
+                    Style="{StaticResource OutputScrollView}">
+
+            <Label HorizontalOptions="Fill"
+                   VerticalOptions="Fill"
+                   Text="{Binding Result}"
+                   FontSize="{Binding FontSize}"
+                   Style="{StaticResource OutputLabel}" />
+
+        </ScrollView>
+
+        <ActivityIndicator Grid.Row="1"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           IsRunning="{Binding IsCalculating}"
+                           IsVisible="{Binding IsCalculating}" />
+    </Grid>
+
+</ContentPage>

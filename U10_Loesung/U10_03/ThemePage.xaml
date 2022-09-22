@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="U10_03.ThemePage"
+             Title="Theme wählen">
+
+    <Grid RowDefinitions="*,Auto">
+        <Grid Grid.Row="0"
+              RowDefinitions="*,*,*,*"
+              RowSpacing="0"
+              Style="{StaticResource ContentGrid}"
+              RadioButtonGroup.GroupName="SelectedColor"
+              RadioButtonGroup.SelectedValue="">
+
+            <Label Grid.Row="0"
+                   Style="{StaticResource TitleLabel}"
+                   Text="Theme wählen" />
+
+            <RadioButton Grid.Row="1"
+                         x:Name="BlueOption">
+                <RadioButton.Content>
+                    <Label Style="{StaticResource ContentLabel}"
+                           VerticalOptions="Center"
+                           Text="Blau" />
+                </RadioButton.Content>
+            </RadioButton>
+
+            <RadioButton Grid.Row="2" 
+                         x:Name="GreenOption">
+                <RadioButton.Content>
+                    <Label Style="{StaticResource ContentLabel}"
+                           VerticalOptions="Center"
+                           Text="Grün" />
+                </RadioButton.Content>
+            </RadioButton>
+
+            <RadioButton Grid.Row="3"
+                         x:Name="RedOption">
+                <RadioButton.Content>
+                    <Label Style="{StaticResource ContentLabel}"
+                           VerticalOptions="Center"
+                           Text="Rot" />
+                </RadioButton.Content>
+            </RadioButton>
+        </Grid>
+
+        <Grid Grid.Row="1"
+              ColumnDefinitions="*,Auto,Auto"
+              Style="{StaticResource ContentGrid}"
+              Background="{StaticResource ButtonBarColor}">
+
+            <Button Grid.Column="1"
+                    Style="{StaticResource SuccessButton}"
+                    Text="Anwenden"
+                    Clicked="ApplyButton_OnClicked" />
+
+            <Button Grid.Column="2"
+                    Text="Abbrechen" />
+        </Grid>
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="U10_02.AlertPage"
+             Title="Änderungen speichern">
+
+    <ContentPage.Resources>
+        <Style x:Key="WarningPolygon" TargetType="Polygon">
+            <Setter Property="Points" Value="8,52 56,52 32,8" />
+            <Setter Property="Fill" Value="{StaticResource AlertColor}" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+        </Style>
+
+        <Style x:Key="WarningLabel" TargetType="Label">
+            <Setter Property="Text" Value="!" />
+            <Setter Property="FontFamily" Value="OpenSansSemibold" />
+            <Setter Property="FontSize" Value="26" />
+            <Setter Property="Margin" Value="0,8,0,0" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+        </Style>
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="*,Auto">
+        <Grid RowDefinitions="*,*"
+              ColumnDefinitions="Auto,*"
+              ColumnSpacing="{StaticResource Spacing2X}"
+              Style="{StaticResource ContentGrid}">
+
+            <Polygon Grid.Row="0"
+                     Grid.RowSpan="2"
+                     Style="{StaticResource WarningPolygon}" />
+
+            <Label Grid.Row="0"
+                   Grid.RowSpan="2"
+                   Grid.Column="0"
+                   Style="{StaticResource WarningLabel}" />
+
+            <Label Grid.Row="0"
+                   Grid.Column="1"
+                   Style="{StaticResource TitleLabel}"
+                   VerticalOptions="End"
+                   Text="Warnung" />
+
+            <Label Grid.Row="1"
+                   Grid.Column="1"
+                   Style="{StaticResource ContentLabel}"
+                   VerticalOptions="Start"
+                   Text="Sollen die Änderungen gespeichert werden?" />
+        </Grid>
+
+        <Grid Grid.Row="1"
+              ColumnDefinitions="Auto,*,Auto,Auto"
+              Style="{StaticResource ContentGrid}"
+              Background="{StaticResource ButtonBarColor}">
+
+            <Button Grid.Column="0"
+                    Text="Themes"
+                    Clicked="ThemesButton_OnClicked"/>
+
+            <Button Grid.Column="2"
+                    Style="{StaticResource SuccessButton}"
+                    Text="Speichern" />
+
+            <Button Grid.Column="3"
+                    Text="Abbrechen" />
+        </Grid>
+    </Grid>
+
+</ContentPage>
