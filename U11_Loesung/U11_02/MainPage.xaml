@@ -29,7 +29,8 @@
         </HorizontalStackLayout>
 
         <ListView Grid.Row="1"
-                  ItemsSource="{Binding}" VerticalScrollBarVisibility="Always">
+                  ItemsSource="{Binding}" 
+                  VerticalScrollBarVisibility="Always">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="local:Clock">
                     <ViewCell>
