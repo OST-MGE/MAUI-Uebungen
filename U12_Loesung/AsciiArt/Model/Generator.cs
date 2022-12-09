@@ -4,7 +4,7 @@ using SixLabors.ImageSharp.PixelFormats;
 namespace U12.Model;
 
 /// <summary>
-/// Erzeugt ASCII Art für Bildes. 
+/// Generiert einen "ASCII Art"-String für ein Bild. Das Bild wird durch einen Dateipfad identifziert.
 /// </summary>
 /// <remarks>
 /// Dieser Code basiert auf der Arbeit von Sean Sexton, wurde aber durch Thomas Kälin im
