@@ -53,12 +53,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Resources\Images\" />
-	  <Folder Include="Resources\Raw\" />
-	  <Folder Include="Resources\Styles\" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <ProjectReference Include="..\AsciiArt.Core\AsciiArt.Core.csproj" />
 	</ItemGroup>
 

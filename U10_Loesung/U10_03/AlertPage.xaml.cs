@@ -14,6 +14,6 @@ public partial class AlertPage : ContentPage
             Title = "Theme wählen"
         };
 
-        Application.Current.OpenWindow(window);
+        Application.Current!.OpenWindow(window);
     }
 }

@@ -48,12 +48,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Resources\Images\" />
-	  <Folder Include="Resources\Raw\" />
-	  <Folder Include="Resources\Styles\" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <Compile Update="AlertPage.xaml.cs">
 	    <DependentUpon>AlertPage.xaml</DependentUpon>
 	  </Compile>

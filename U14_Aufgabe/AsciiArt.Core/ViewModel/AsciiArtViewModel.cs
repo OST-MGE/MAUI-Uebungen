@@ -112,7 +112,7 @@ public sealed class AsciiArtViewModel : BindableBase, IAsciiArtViewModel
         }
     }
 
-    public async void OnCreateAsciiCommandExecute()
+    private async void OnCreateAsciiCommandExecute()
     {
         if (string.IsNullOrEmpty(ImagePath))
         {
