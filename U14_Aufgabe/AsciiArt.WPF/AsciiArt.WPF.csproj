@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net7.0-windows</TargetFramework>
     <RootNamespace>U14.WPF</RootNamespace>
     <Nullable>disable</Nullable>
     <UseWPF>true</UseWPF>
