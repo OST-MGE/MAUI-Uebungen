@@ -108,12 +108,14 @@
                                Spacing="20" 
                                Margin="10">
             <Button Text="Abbrechen" 
-                    WidthRequest="150" 
+                    WidthRequest="150"
+                    TextColor="White"
                     BackgroundColor="DarkRed"
                     FontFamily="OpenSansRegular" />
 
             <Button Text="OK"
-                    WidthRequest="150" 
+                    WidthRequest="150"
+                    TextColor="White"
                     BackgroundColor="DarkGreen"
                     FontFamily="OpenSansRegular" />
         </HorizontalStackLayout>
