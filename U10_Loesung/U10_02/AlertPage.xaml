@@ -6,7 +6,7 @@
 
     <ContentPage.Resources>
         <Style x:Key="WarningPolygon" TargetType="Polygon">
-            <Setter Property="Points" Value="8,52 56,52 32,8" />
+            <Setter Property="Points" Value="0,52 56,52 28,0" />
             <Setter Property="Fill" Value="{StaticResource AlertColor}" />
             <Setter Property="VerticalOptions" Value="Center" />
             <Setter Property="HorizontalOptions" Value="Center" />
@@ -15,7 +15,7 @@
         <Style x:Key="WarningLabel" TargetType="Label">
             <Setter Property="Text" Value="!" />
             <Setter Property="FontFamily" Value="OpenSansSemibold" />
-            <Setter Property="FontSize" Value="26" />
+            <Setter Property="FontSize" Value="32" />
             <Setter Property="Margin" Value="0,8,0,0" />
             <Setter Property="VerticalOptions" Value="Center" />
             <Setter Property="HorizontalOptions" Value="Center" />
