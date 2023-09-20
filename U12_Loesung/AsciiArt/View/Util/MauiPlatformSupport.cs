@@ -20,7 +20,14 @@ public sealed class MauiPlatformSupport
     /// </summary>
     public async Task<string> ChooseFileAsync()
     {
+        // Fix for an error in MAUI when running on macOS - No picker opens when using a filter
+        // See: https://github.com/dotnet/maui/issues/11088
+#if MACCATALYST
+        var result = await FilePicker.Default.PickAsync();
+#else
         var result = await FilePicker.Default.PickAsync(PickOptions.Images);
+#endif
+        
         var pathToFile = result?.FullPath;
 
         return pathToFile;
