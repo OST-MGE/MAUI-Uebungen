@@ -13,17 +13,16 @@
 
             <Polygon Grid.Row="0"
                      Grid.RowSpan="2"
-                     Points="8,52 56,52 32,8" 
+                     Points="0,52 56,52 28,0" 
                      Fill="Red"
                      VerticalOptions="Center"
                      HorizontalOptions="Center"/>
 
             <Label Grid.Row="0"
                    Grid.RowSpan="2"
-                   Grid.Column="0"
-                   Text="!" 
+                   Text="!"
                    FontFamily="OpenSansSemibold"
-                   FontSize="26"
+                   FontSize="32"
                    VerticalOptions="Center" 
                    HorizontalOptions="Center"
                    Margin="0,8,0,0"/>

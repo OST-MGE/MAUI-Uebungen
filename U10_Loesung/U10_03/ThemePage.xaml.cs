@@ -47,7 +47,7 @@ public partial class ThemePage : ContentPage
 
         App.ActiveTheme = newTheme;
 
-        Application.Current.CloseWindow(Window);
+        Application.Current!.CloseWindow(Window);
     }
 }
 

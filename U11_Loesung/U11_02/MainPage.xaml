@@ -30,11 +30,13 @@
 
         <ListView Grid.Row="1"
                   ItemsSource="{Binding}" 
-                  VerticalScrollBarVisibility="Always">
+                  VerticalScrollBarVisibility="Always"
+                  HasUnevenRows="True">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="local:Clock">
                     <ViewCell>
-                        <Label Text="{Binding TimeString}" Style="{StaticResource TimeStyle}"  />
+                        <Label Text="{Binding TimeString}" 
+                               Style="{StaticResource TimeStyle}" />
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>

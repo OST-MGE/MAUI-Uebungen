@@ -64,7 +64,7 @@ public sealed class AsciiArtViewModel : IAsciiArtViewModel
         }
     }
 
-    public async void OnCreateAsciiCommandExecute()
+    private async void OnCreateAsciiCommandExecute()
     {
         if (string.IsNullOrEmpty(ImagePath))
         {

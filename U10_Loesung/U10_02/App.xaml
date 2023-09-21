@@ -9,6 +9,8 @@
         <s:Double x:Key="Spacing2X">20</s:Double>
         <s:Double x:Key="FontSize">14</s:Double>
 
+        <Color x:Key="WhiteColor">White</Color>
+
         <SolidColorBrush x:Key="AlertColor" Color="Red" />
         <SolidColorBrush x:Key="ButtonBarColor" Color="#262626" />
         <SolidColorBrush x:Key="NormalButtonColor" Color="#666666" />
@@ -43,6 +45,7 @@
             <Setter Property="WidthRequest" Value="100" />
             <Setter Property="FontFamily" Value="OpenSansRegular" />
             <Setter Property="FontSize" Value="{StaticResource FontSize}" />
+            <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
         </Style>
 
         <Style TargetType="Button" BasedOn="{StaticResource BaseButton}">
