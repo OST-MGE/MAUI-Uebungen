@@ -42,6 +42,8 @@ public sealed class MauiPlatformSupport : IPlatformSupport
     /// <param name="msg">Die Nachricht für die Fehlermeldung</param>
     public Task ShowErrorAsync(string title, string msg)
     {
-        return _application.MainPage!.DisplayAlert(title, msg, "OK");
+        return MainThread.InvokeOnMainThreadAsync(async () => {
+            await _application.MainPage!.DisplayAlert(title, msg, "OK");
+        });
     }
 }
