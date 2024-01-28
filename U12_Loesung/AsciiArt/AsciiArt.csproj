@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net7.0-android;net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
-		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>
+		<TargetFrameworks>net8.0-android;net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
-		<!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
+		<!-- <TargetFrameworks>$(TargetFrameworks);net8.0-tizen</TargetFrameworks> -->
 		<OutputType>Exe</OutputType>
 		<RootNamespace>U12</RootNamespace>
 		<UseMaui>true</UseMaui>
@@ -48,24 +48,25 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Resources\Fonts\RobotoMono-Regular.ttf" />
-	  <None Remove="Resources\Fonts\RobotoMono-SemiBold.ttf" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.3" />
+		<PackageReference Include="SixLabors.ImageSharp" Version="3.0.1" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="SixLabors.ImageSharp" Version="3.0.1" />
+		<None Remove="Resources\Fonts\RobotoMono-Regular.ttf" />
+		<None Remove="Resources\Fonts\RobotoMono-SemiBold.ttf" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="View\Pages\AsciiArtPage.xaml.cs">
-	    <DependentUpon>AsciiArtPage.xaml</DependentUpon>
-	  </Compile>
+		<Compile Update="View\Pages\AsciiArtPage.xaml.cs">
+			<DependentUpon>AsciiArtPage.xaml</DependentUpon>
+		</Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="View\Styling\AsciiArtStyles.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
+		<MauiXaml Update="View\Styling\AsciiArtStyles.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
 	</ItemGroup>
 
 </Project>
